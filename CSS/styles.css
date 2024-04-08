@@ -5,10 +5,33 @@
     color: white; /* Color del texto */
     text-decoration: none; /* Eliminar subrayado */
 }
+/* Cambiar color de fondo a blanco */
+.barra_principal {
+    background-color: white !important;
+}
 
+/* Alinear el contenido a la derecha */
+.barra_principal .navbar-nav {
+    margin-left: auto;
+}
 
-.navbar-nav .nav-link:not(:last-child):after {
-    content: "|"; /* Agregar barra vertical después de cada frase, excepto la última */
-    margin-left: 10px; /* Espacio entre la barra vertical y la siguiente frase */
-    margin-right: 10px; /* Espacio entre la barra vertical y la siguiente frase */
+/* Estilo para el icono de lupa */
+.barra_principal .fa-search {
+    color: #212529;
+}
+
+/* Estilo para el icono de persona */
+.barra_principal .fa-user {
+    color: #212529;
+    margin-right: 10px;
+}
+
+ /* Estilo para los botones de iconos */
+ .barra_principal .icon-button {
+    color: #212529;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
