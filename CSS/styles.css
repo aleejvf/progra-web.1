@@ -1,0 +1,14 @@
+.navbar-nav .nav-link {
+    font-size: 14px; /* Tamaño de texto reducido */
+    margin-right: 50px; /* Espacio entre frases */
+    margin-left: 50px; /* Espacio entre frases */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+
+.navbar-nav .nav-link:not(:last-child):after {
+    content: "|"; /* Agregar barra vertical después de cada frase, excepto la última */
+    margin-left: 10px; /* Espacio entre la barra vertical y la siguiente frase */
+    margin-right: 10px; /* Espacio entre la barra vertical y la siguiente frase */
+}
