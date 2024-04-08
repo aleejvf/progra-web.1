@@ -1,7 +1,9 @@
-.navbar-nav .nav-link {
-    font-size: 14px; /* Tamaño de texto reducido */
-    margin-right: 50px; /* Espacio entre frases */
-    margin-left: 50px; /* Espacio entre frases */
+.navbar1 .nav-link {
+    font-size: 10px; /* Tamaño de texto reducido */
+    margin-right: 40px; /* Espacio entre frases */
+    margin-left: 40px; /* Espacio entre frases */
+    padding-top: 5px; /* Reducir el espacio superior del enlace */
+    padding-bottom: 5px; /* Reducir el espacio inferior del enlace */
     color: white; /* Color del texto */
     text-decoration: none; /* Eliminar subrayado */
 }
