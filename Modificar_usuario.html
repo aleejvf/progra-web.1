@@ -96,10 +96,39 @@
               <input type="password" class="form-control" id="pwd">
             </div>
             <div class="text-center mb-4">
-                <a href="Catalogo.html" class="btn btn-primary">Actualizar</a>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                    Actualizar
+                  </button>
                 <a href="index.html" class="btn btn-danger">Cancelar</a>
             </div>
             </form>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modificado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Datos actualizados
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <a href="Perfil.html" class="btn btn-success">OK</a>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
 
 
 
