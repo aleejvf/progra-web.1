@@ -92,11 +92,11 @@
               <input type="email" class="form-control" id="email" value="correo@corrreo.cl" readonly>
             </div>
             <div class="text-center mb-4">
-                <a href="Modificar_usuario.html" class="btn btn-danger">Modificar</a>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                <a href="Modificar_usuario.html" class="btn btn-primary">Modificar</a>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal">
                     Eliminar
                   </button>
-                <a href="index.html" class="btn btn-danger">Cancelar</a>
+                <a href="index.html" class="btn btn-primary">Volver</a>
             </div>
             </form>
 
@@ -114,6 +114,12 @@
         <!-- Modal body -->
         <div class="modal-body">
           Una vez borrada tu cuenta no se podra recuperar...
+          <br>
+          Ingrese su contraseña para continuar
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Cotraseña:</label>
+            <input type="password" class="form-control" id="pwd" required>
+          </div>
         </div>
   
         <!-- Modal footer -->
