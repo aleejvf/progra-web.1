@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto</title>
+    <title>Pagar</title>
     <!-- Latest compiled and minified CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
-</head>
 
+</head>
 <body>
-    <!-- borte top principal -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+     <!-- borte top principal -->
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
             <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
                 <ul class="navbar-nav">
@@ -41,30 +40,30 @@
     <!-- barra de menu principal responsi -->
     <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="javascript:void(0)">Peramyem</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="javascript:void(0)">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="javascript:void(0)">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="javascript:void(0)">Link</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Search">
-                    <button class="btn btn-primary" type="button">Search</button>
-                </form>
-            </div>
+          <a class="navbar-brand" href="javascript:void(0)">Peramyem</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="javascript:void(0)">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="javascript:void(0)">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="javascript:void(0)">Link</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="button">Search</button>
+            </form>
+          </div>
         </div>
-    </nav>
-    <a href="index.html">
+      </nav>
+    <a href="index.html">    
         <div class="main" style="text-align:center;">
             <img src="img/peramyem-logo.jpeg" class="img-fluid" style="max-width:10%;height:auto;">
         </div>
@@ -76,97 +75,121 @@
         <div class="col-sm-4">RETIRA EN TIENDA</div>
     </div>
 
-    <div class="offcanvas offcanvas-end" id="demo">
-        <div class="offcanvas-header">
-            <h1 class="offcanvas-title">Carrito</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <p>Some text lorem ipsum.</p>
-            <p>Some text lorem ipsum.</p>
-            <p>Some text lorem ipsum.</p>
-        </div>
-        <div class="offcanvas-end p-4">
-            <hr>
-            <p>Total</p>
-            <hr>
-            <a href="Carrito.html" class="btn btn-sm btn-outline-secondary">Ver Carrito</a>
-            <a href="Pagar.html" class="btn btn-sm btn-outline-secondary">Comprar</a>
+    <div class="container mt-3">
+        <div class="row g-5">
+          <div class="col-md-5 col-lg-4 order-md-last">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-primary">Tu carrito</span>
+              <span class="badge bg-primary rounded-pill">3</span>
+            </h4>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">nombre 1</h6>
+                  <small class="text-body-secondary">descripcion 1</small>
+                </div>
+                <span class="text-body-secondary">$$$$$$</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">nombre 2</h6>
+                  <small class="text-body-secondary">descripcion 2</small>
+                </div>
+                <span class="text-body-secondary">$$$$$$</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">nombre 3</h6>
+                  <small class="text-body-secondary">descripcion 3</small>
+                </div>
+                <span class="text-body-secondary">$$$$$$</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total</span>
+                <strong>$$$$$$$$</strong>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">Datos de Facturacion</h4>
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombre">
+                </div>
+    
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="lastName">
+                </div>
+    
+                <div class="col-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email">
+                </div>
+    
+                <div class="col-12">
+                  <label for="address" class="form-label">Direccion</label>
+                  <input type="text" class="form-control" id="address">
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">Codigo Postal</label>
+                  <input type="text" class="form-control" id="zip">
+              </div>
+    
+              <hr class="my-4">
+    
+              <h4 class="mb-3">Metodo de pago</h4>
+    
+              <div class="my-3">
+                <div class="form-check">
+                  <input id="credito" name="paymentMethod" type="radio" class="form-check-input" checked>
+                  <label class="form-check-label" for="credito">Tarjeta de Credito</label>
+                </div>
+                <div class="form-check">
+                  <input id="debito" name="paymentMethod" type="radio" class="form-check-input">
+                  <label class="form-check-label" for="debito">Tarjeta de debito</label>
+                </div>
+                <div class="form-check">
+                  <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
+                  <label class="form-check-label" for="paypal">PayPal</label>
+                </div>
+              </div>
+    
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="cc-name" class="form-label">Nombre del titular</label>
+                  <input type="text" class="form-control" id="cc-name">
+                </div>
+    
+                <div class="col-md-6">
+                  <label for="cc-number" class="form-label">Numero de tarjeta</label>
+                  <input type="number" class="form-control" id="cc-number">
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="cc-expiration" class="form-label">Fecha de vencimiento</label>
+                  <input type="month" class="form-control" id="cc-expiration">
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="cc-cvv" class="form-label">CVV</label>
+                  <input type="text" class="form-control" id="cc-cvv">
+                </div>
+              </div>
+              <div>
+                  <a href="Compra.html" class="btn btn-primary mt-3">Pagar</a>
+              </div>
+              <hr class="my-4">
+            </form>
+          </div>
         </div>
     </div>
-
-
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-6">
-                <!--imagenes pequeñas al lado-->
-                <img src="img/aros.jpg" alt="aros">
-            </div>
-            <div class="col-md-6 pt-3">
-                <h3>Aros Testing</h3>
-                <hr>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo deleniti inventore maxime praesentium
-                    aut unde corrupti excepturi molestias. Dolorum architecto natus vero. Natus incidunt deleniti in?
-                    Hic, cupiditate! Quo, consequatur.</p>
-                <p>$999.999</p>
-                <!--añadir opcion de varios-->
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-                    Añadir al carrito
-                </button>
-
-
-
-                <a href="Pagar.html" class="btn btn-sm btn-outline-secondary">Comprar</a>
-
-                <hr>
-
-            </div>
-        </div>
-        <hr>
-        <h3>Productos relacionados</h3>
-        <div class="row">
-            <div class="col-md-3">
-                <p>
-                    <img src="img/aros.jpg" width="20%" alt="aros">
-                    sdasadsadasd
-                </p>
-            </div>
-            <div class="col-md-3">
-                <p>
-                    <img src="img/aros.jpg" width="20%" alt="aros">
-                    sdasadsadasd
-                </p>
-            </div>
-            <div class="col-md-3">
-                <p>
-                    <img src="img/aros.jpg" width="20%" alt="aros">
-                    sdasadsadasd
-                </p>
-            </div>
-            <div class="col-md-3">
-                <p>
-                    <img src="img/aros.jpg" width="20%" alt="aros">
-                    sdasadsadasd
-                </p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--revisar esta parte del footer-->
+</div>
+ <!--revisar esta parte del footer-->
 
 
     <!-- Footer -->
@@ -290,6 +313,6 @@
         <!-- Grid container -->
     </footer>
     <!-- Footer -->
-</body>
 
+</body>
 </html>
