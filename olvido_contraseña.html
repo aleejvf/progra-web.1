@@ -90,9 +90,9 @@
                               <input class="form-check-input" type="checkbox" name="remember"> Remember me
                             </label>
                           </div>
-                          <p><a  href="olvido_contraseña.html">¿Olvidaste tu contaseña?</a></p>
-                          <a class="btn btn-outline-secondary mx-2" href="usuario_normal.html">Iniciar</a></button>
-                          <p><a href="Crear_usuario.html">Registrate</a><a href="user_admin.html"> /cuenta admin/ </a></p>
+                          <p><a  href="olvidado contaseña">¿Olvidaste tu contaseña?</a></p>
+                          <button type="submit" class="btn btn-primary">Iniciar</button>
+                          <p><a href="Crear_usuario.html">Registrate</a><a href="user_admin.html"> /cuenta admin/ </a><a href="usuario_normal.html">/cuenta normal/</a></p>
                         </form>
                       </div>
                       
@@ -129,94 +129,75 @@
         <div class="col-sm-4">I    RETIRA EN TIENDA    I</div>
     </div>
 
-<!-- imagen loop -->
-
-    <!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-    <!-- Indicators/dots -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Restablecer Contraseña</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="resetPasswordForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Nueva Contraseña:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirm-password" class="form-label">Confirmar Contraseña:</label>
+                                <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Restablecer Contraseña</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <!-- The slideshow/carousel -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/aro_n1.jpg" alt="Los Angeles" class="d-block" style="width:100%;height:90%;">
-      </div>
-      <div class="carousel-item">
-        <img src="img/aro_n2.jpg" alt="Chicago" class="d-block" style="width:100%">
-      </div>
-      <div class="carousel-item">
-        <img src="img/aro_n3.jpg" alt="New York" class="d-block" style="width:100%">
-      </div>
-    </div>
+    <!-- Bootstrap JS (requerido para los componentes de Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Selecciona el formulario de restablecimiento de contraseña
+        const resetPasswordForm = document.getElementById('resetPasswordForm');
     
-    <!-- Left and right controls/icons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-
-  <!-- imagen link relleno -->
-  <div  class="row" style="padding: 40px;">
-    <div id="salto" class="col-sm-4 " style="padding: 10px;">
-        <img src="img/aro_3.jpg" class="img-fluid" style="max-width:100%;height:auto;">
-        <div class="card">
-            <div class="card-header">
-              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseone">
-                Ver mas
-            </a>
-            </div>
-            <div id="collapseone" class="collapse" data-bs-parent="#accordion">
-              <div class="card-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                <p class="text-end"><button type="button" class="btn btn-outline-secondary"><a href="Catalogo.html" target="_self" style="color: black;text-decoration: none;">Ver aros</a></button></p>
-              </div>
-            </div>
-        </div>
-    </div>
-    <div id="salto" class=" col-sm-4"style="padding: 10px;">
-        <img src="img/aro_3.jpg" class="img-fluid" style="max-width:100%;height:auto;">
-        <div class="card">
-            <div class="card-header">
-              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
-                Ver mas
-            </a>
-            </div>
-            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-              <div class="card-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                <p class="text-end"><button type="button" class="btn btn-outline-secondary"><a href="Catalogo.html" target="_self" style="color: black;text-decoration: none;">Ver productos</a></button></p>
-                
-              </div>
+        // Escucha el evento submit del formulario
+        resetPasswordForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+    
+            // Muestra el modal de alerta
+            var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+            confirmationModal.show();
+        });
+    
+        // Función para redirigir a index.html
+        function redirectToIndex() {
+            window.location.href = 'index.html';
+        }
+    </script>
+    
+    <!-- Modal de confirmación -->
+    <div class="modal fade" id="confirmationModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contraseña Restablecida</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>La contraseña se ha restablecido correctamente.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="redirectToIndex()">Listo</button>
+                </div>
             </div>
         </div>
     </div>
-    <div id="salto" class=" col-sm-4 "style="padding: 10px;">
-        <img src="img/aro_3.jpg" class="img-fluid" style="max-width:100%;height:auto;">
-        <div class="card">
-            <div class="card-header">
-              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
-                Ver mas
-              </a>
-            </div>
-            <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
-              <div class="card-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                <p class="text-end"><button type="button" class="btn btn-outline-secondary"><a href="Catalogo.html" target="_self" style="color: black;text-decoration: none;">Ver anillos</a></button></p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-  <div class="contaimer"></div>
+    <p>  </p>
+    <p>  </p>
 
 
  
