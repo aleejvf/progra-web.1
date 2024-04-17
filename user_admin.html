@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <!-- borte top principal -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link">Envío a todo Chile</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">I</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">Envío Gratis por compras sobre $100.000</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">I</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">Despachos Concepción y RM 24-48hrs hábiles</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+
+    
+      
+    
+    <!-- barra de menu principal responsi -->
+    <nav class="navbar navbar-expand-sm ">
+        <div class="container-fluid">
+            <div class="col">
+              <a href="user_admin.html">    
+        
+               <img src="img/peramyem-logo.jpeg" class="img-fluid" style="max-width:20%;height:auto;">
+                
+              </a>
+            </div>
+          
+            <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+               
+              <!-- opciones para editar -->
+              <li class="nav-item ">
+                <a class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal">Opciones</a>
+              </li>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+            
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Adminitrador</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+            
+                    <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal"><a href="añadir_prod.html">Añadir producto</a></button>
+                    <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal"href="crear cuenta">Modificar producto</button>
+                    <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal"><a href="index.html">Cerrar sesion</a></button>
+                  </div>
+                      
+                </div>
+            
+                </div>
+            </div>
+    
+              <li class="nav-item ">
+                <a class="btn btn-outline-secondary" href="javascript:void(0)">Productos en tienda</a>
+              </li>
+              
+             
+            </ul>
+            
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="button">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    
+
+    <!-- barra de informacion -->
+    <div class="row bg-light" style="text-align:center; color: rgb(83, 82, 82); padding: 20px;">
+        <div class="col-sm-4">I    VITRINEA DESDE CASA    I</div>
+        <div class="col-sm-4">I    RECIBE EN TU DOMICILIO    I</div>
+        <div class="col-sm-4">I    RETIRA EN TIENDA    I</div>
+    </div>
+
+<!-- imagen loop -->
+
+    <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/aro_n1.jpg" alt="Los Angeles" class="d-block" style="width:100%;height:90%;">
+      </div>
+      <div class="carousel-item">
+        <img src="img/aro_n2.jpg" alt="Chicago" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="img/aro_n3.jpg" alt="New York" class="d-block" style="width:100%">
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- imagen link relleno -->
+  <div  class="row" style="padding: 40px;">
+    <div id="salto" class="col-sm-4 " style="padding: 10px;">
+        <img src="img/aro_3.jpg" class="img-fluid" style="max-width:100%;height:auto;">
+        <div class="card">
+            <div class="card-header">
+              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseone">
+                mas info
+            </a>
+            </div>
+            <div id="collapseone" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <p class="text-end"><button type="button" class="btn btn-outline-secondary"><a href="https://www.w3schools.com/" target="_self" style="color: black;text-decoration: none;">Visit W3Schools!</a></button></p>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div id="salto" class=" col-sm-4"style="padding: 10px;">
+        <img src="img/aro_3.jpg" class="img-fluid" style="max-width:100%;height:auto;">
+        <div class="card">
+            <div class="card-header">
+              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                Descripcion
+            </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <p class="text-end"><button type="button" class="btn btn-outline-secondary"><a href="https://www.w3schools.com/" target="_self" style="color: black;text-decoration: none;">Visit W3Schools!</a></button></p>
+                
+              </div>
+            </div>
+        </div>
+    </div>
+    <div id="salto" class=" col-sm-4 "style="padding: 10px;">
+        <img src="img/aro_3.jpg" class="img-fluid" style="max-width:100%;height:auto;">
+        <div class="card">
+            <div class="card-header">
+              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                Descripcion
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <p class="text-end"><button type="button" class="btn btn-outline-secondary"><a href="https://www.w3schools.com/" target="_self" style="color: black;text-decoration: none;">Visit W3Schools!</a></button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="contaimer"></div>
+
+
+ 
+
+
+    <!-- borde final informativo -->
+    <footer
+    class="text-center text-lg-start text-white"
+    style="background-color: #45526e"
+    >
+<!-- Grid container -->
+<div class="container p-4 pb-0">
+<!-- Section: Links -->
+<section class="">
+  <!--Grid row-->
+  <div class="row">
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">
+        Company name
+      </h6>
+      <p>
+        Here you can use rows and columns to organize your footer
+        content. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit.
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <hr class="w-100 clearfix d-md-none" />
+
+    <!-- Grid column -->
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+      <p>
+        <a class="text-white">MDBootstrap</a>
+      </p>
+      <p>
+        <a class="text-white">MDWordPress</a>
+      </p>
+      <p>
+        <a class="text-white">BrandFlow</a>
+      </p>
+      <p>
+        <a class="text-white">Bootstrap Angular</a>
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <hr class="w-100 clearfix d-md-none" />
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">
+        Useful links
+      </h6>
+      <p>
+        <a class="text-white">Your Account</a>
+      </p>
+      <p>
+        <a class="text-white">Become an Affiliate</a>
+      </p>
+      <p>
+        <a class="text-white">Shipping Rates</a>
+      </p>
+      <p>
+        <a class="text-white">Help</a>
+      </p>
+    </div>
+
+    <!-- Grid column -->
+    <hr class="w-100 clearfix d-md-none" />
+
+    <!-- Grid column -->
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+      <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+      <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+      <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+      <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+    </div>
+    <!-- Grid column -->
+  </div>
+  <!--Grid row-->
+</section>
+<!-- Section: Links -->
+
+<hr class="my-3">
+
+<!-- Section: Copyright -->
+<section class="p-3 pt-0">
+  <div class="row d-flex align-items-center">
+    <!-- Grid column -->
+    <div class="col-md-7 col-lg-8 text-center text-md-start">
+      <!-- Copyright -->
+      <div class="p-3">
+        &copy; 2024 Copyright:
+        <a class="text-white" href="#"
+           >correo@correo.com</a
+          >
+      </div>
+      <!-- Copyright -->
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+      <!-- Facebook -->
+      <a
+         class="btn btn-outline-light btn-floating m-1"
+         class="text-white"
+         role="button"
+         ><i class="fab fa-facebook-f"></i
+        ></a>
+
+      <!-- Twitter -->
+      <a
+         class="btn btn-outline-light btn-floating m-1"
+         class="text-white"
+         role="button"
+         ><i class="fab fa-twitter"></i
+        ></a>
+
+      <!-- Google -->
+      <a
+         class="btn btn-outline-light btn-floating m-1"
+         class="text-white"
+         role="button"
+         ><i class="fab fa-google"></i
+        ></a>
+
+      <!-- Instagram -->
+      <a
+         class="btn btn-outline-light btn-floating m-1"
+         class="text-white"
+         role="button"
+         ><i class="fab fa-instagram"></i
+        ></a>
+    </div>
+    <!-- Grid column -->
+  </div>
+</section>
+<!-- Section: Copyright -->
+</div>
+<!-- Grid container -->
+</footer>
+<!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
