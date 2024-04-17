@@ -104,6 +104,55 @@
         <div class="col-sm-4">I    RETIRA EN TIENDA    I</div>
     </div>
 
+    <div class="container">
+        <h2>Tabla de Productos</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Tipo</th>
+                        <th>Tamaño</th>
+                        <th>Centímetros</th>
+                        <th>Dinero</th>
+                        <th>Descripción</th>
+                        <th>Seleccionar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="imagen1.jpg" alt="Producto 1" style="width: 100px;"></td>
+                        <td>Anillo</td>
+                        <td>Grande</td>
+                        <td>5 cm</td>
+                        <td>$50.000</td>
+                        <td>Descripción del producto 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagen2.jpg" alt="Producto 2" style="width: 100px;"></td>
+                        <td>Aro</td>
+                        <td>Mediano</td>
+                        <td>3 cm</td>
+                        <td>$30.000</td>
+                        <td>Descripción del producto 2</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagen3.jpg" alt="Producto 3" style="width: 100px;"></td>
+                        <td>Anillo</td>
+                        <td>Pequeño</td>
+                        <td>2.5 cm</td>
+                        <td>$40.000</td>
+                        <td>Descripción del producto 3</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Agrega más filas según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <!-- Formulario para agregar producto -->
     <div class="container product-container">
         <div class="row">
@@ -147,7 +196,9 @@
                         <label for="description" class="form-label">Descripción:</label>
                         <textarea class="form-control" id="description" rows="3" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Agregar</button>
+                    <button type="button" class="btn btn-danger" id="deleteButton" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">Eliminar</button>
+            
+                    <button type="submit" class="btn btn-primary">Modificar</button>
                 </form>
             </div>
         </div>
@@ -210,23 +261,97 @@
             confirmationModal.hide();
         });
     </script>
-
-    <!-- Modal de confirmación -->
-    <div class="modal fade" id="confirmationModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Confirmación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="confirmationMessage"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="confirmButton">Aceptar</button>
-                </div>
+    <!-- Modal de confirmación de eliminación -->
+<div class="modal fade" id="deleteConfirmationModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmación de Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar este producto?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Confirmar</button>
             </div>
         </div>
     </div>
+</div>
+<!-- Modal de alerta de eliminación confirmada -->
+<div class="modal fade" id="deleteAlertModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminación Confirmada</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>El producto ha sido eliminado exitosamente.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><a href="modificar_prod.html">Listo</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("confirmDeleteButton").addEventListener("click", function() {
+        var deleteConfirmationModal = bootstrap.Modal.getInstance(document.getElementById("deleteConfirmationModal"));
+        deleteConfirmationModal.hide();
+        
+        var deleteAlertModal = new bootstrap.Modal(document.getElementById("deleteAlertModal"));
+        deleteAlertModal.show();
+    });
+</script>
+
+   <!-- Modal de confirmación -->
+<div class="modal fade" id="confirmationModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="confirmationMessage"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmButton">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de modificaciones realizadas -->
+<div class="modal fade" id="modificationsModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modificaciones Realizadas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Las modificaciones se han realizado exitosamente.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="modificar_prod.html" class="btn btn-primary">Seguir</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("confirmButton").addEventListener("click", function() {
+        // Oculta el modal de confirmación
+        var confirmationModal = bootstrap.Modal.getInstance(document.getElementById("confirmationModal"));
+        confirmationModal.hide();
+        
+        // Muestra el modal de modificaciones realizadas
+        var modificationsModal = new bootstrap.Modal(document.getElementById("modificationsModal"));
+        modificationsModal.show();
+    });
+</script>
 
     <!-- Footer -->
     <footer class="text-center text-lg-start text-white" style="background-color: #45526e">
