@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Productos</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Estilos personalizados */
+        .product-img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        @media (max-width: 576px) {
+            .product-img {
+                max-width: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- borte top principal -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link">Envío a todo Chile</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">I</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">Envío Gratis por compras sobre $100.000</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">I</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">Despachos Concepción y RM 24-48hrs hábiles</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+      <!-- barra de menu principal responsi -->
+    <nav class="navbar navbar-expand-sm ">
+        <div class="container-fluid">
+            <div class="col">
+              <a href="user_admin.html">    
+        
+               <img src="img/peramyem-logo.jpeg" class="img-fluid" style="max-width:20%;height:auto;">
+                
+              </a>
+            </div>
+          
+            <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+               
+            <!-- administracion prod -->
+            <li class="nav-item ">
+                <a class="btn btn-outline-secondary mx-2" href="productos_admin.html"><i class="bi bi-gear">Administrador de productos</i></a>
+              </li>
+             
+            <!-- Administracion de usuarios -->
+            <li class="nav-item ">
+                <a class="btn btn-outline-secondary mx-2" href="registro_user_admin.html"><i class="bi bi-person"> Administracion de usuarios</i></a>
+              </li>
+              <!-- administracion de compra -->
+            <li class="nav-item ">
+                <a class="btn btn-outline-secondary mx-2" href="registro_compras_adm.html"><i class="bi bi-gear">Registro de compra</i></a>
+              </li>
+            <!-- opciones para editar -->
+            <li class="nav-item ">
+                <a class="btn btn-outline-secondary mx-2" href="index.html"> Cerrar sesion</a>
+            </li>
+
+              
+             
+            </ul>
+            
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    
+
+    <!-- barra de informacion -->
+    <div class="row bg-light" style="text-align:center; color: rgb(83, 82, 82); padding: 20px;">
+        <div class="col-sm-4">I    VITRINEA DESDE CASA    I</div>
+        <div class="col-sm-4">I    RECIBE EN TU DOMICILIO    I</div>
+        <div class="col-sm-4">I    RETIRA EN TIENDA    I</div>
+    </div>
+
+<!-- imagen loop -->
+    <h1 class="container mb-4">Administración de productos</h1>
+    <div class="container mt-3">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Buscar por nombre">
+            </div>
+            <div class="col-md-6 text-end">
+                <!-- Botón para abrir el modal de agregar producto -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                    Agregar Producto
+                </button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Tipo</th>
+                        <th>Tamaño</th>
+                        <th>Centímetros</th>
+                        <th>Valor</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Producto" class="product-img"></td>
+                        <td>Anillo</td>
+                        <td>Grande</td>
+                        <td>5 cm</td>
+                        <td>$50</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
+                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Tipo</th>
+                        <th>Tamaño</th>
+                        <th>Centímetros</th>
+                        <th>Valor</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Producto" class="product-img"></td>
+                        <td>Anillo</td>
+                        <td>Grande</td>
+                        <td>5 cm</td>
+                        <td>$50</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
+                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Tipo</th>
+                        <th>Tamaño</th>
+                        <th>Centímetros</th>
+                        <th>Valor</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Producto" class="product-img"></td>
+                        <td>Anillo</td>
+                        <td>Grande</td>
+                        <td>5 cm</td>
+                        <td>$50</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
+                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
+                        </td>
+                    </tr><tr>
+                        <th>Imagen</th>
+                        <th>Tipo</th>
+                        <th>Tamaño</th>
+                        <th>Centímetros</th>
+                        <th>Valor</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Producto" class="product-img"></td>
+                        <td>Anillo</td>
+                        <td>Grande</td>
+                        <td>5 cm</td>
+                        <td>$50</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
+                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                    
+                    <!-- Agregar más filas según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    <!-- Modal para añadir producto -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">Añadir Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para agregar producto -->
+                    <div class="container product-container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Imagen:</label>
+                                    <input type="file" class="form-control" id="image" accept="image/*">
+                                    <div class="mt-3">
+                                        <img id="preview" class="img-fluid" alt="Vista previa de la imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <form id="productForm">
+                                    <div class="mb-3">
+                                        <label for="type" class="form-label">Tipo:</label>
+                                        <select class="form-select" id="type">
+                                            <option value="">Seleccionar...</option>
+                                            <option value="anillo">Anillo</option>
+                                            <option value="aro">Aro</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Tamaño" class="form-label">Tamaño:</label>
+                                        <select class="form-select" id="Tamaño">
+                                            <option value="">Seleccionar...</option>
+                                            <option value="grande">Grande</option>
+                                            <option value="mediano">Mediano</option>
+                                            <option value="pequeño">Pequeño</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="centimeters" class="form-label">Centímetros:</label>
+                                        <input type="text" class="form-control" id="centimeters">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="money" class="form-label">Dinero:</label>
+                                        <input type="text" class="form-control" id="money">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="description" class="form-label">Descripción:</label>
+                                        <textarea class="form-control" id="description" rows="3"></textarea>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmationModal">
+                                        Confirmar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de confirmación -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirmación</h5>
+                    
+                </div>
+                <div class="modal-body">
+                    <p>El producto se ha añadido correctamente.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-secondary mx-2" href="productos_admin.html">Listo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación de eliminación -->
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirmación de Eliminación</h5>
+                    
+                </div>
+                <div class="modal-body">
+                    ¿Seguro que desea eliminar este producto?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mx-2" data-bs-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-outline-secondary mx-2" href="productos_admin.html">Aceptar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal para modificar producto -->
+    <div class="modal fade" id="modifyProductModal" tabindex="-1" aria-labelledby="modifyProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modifyProductModalLabel">Modificar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para modificar producto -->
+                    <div class="container product-container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Imagen:</label>
+                                    <input type="file" class="form-control" id="image" accept="image/*">
+                                    <div class="mt-3">
+                                        <img id="preview" class="img-fluid" alt="Vista previa de la imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <form id="modifyProductForm">
+                                    <div class="mb-3">
+                                        <label for="type" class="form-label">Tipo:</label>
+                                        <select class="form-select" id="type">
+                                            <option value="">Seleccionar...</option>
+                                            <option value="anillo">Anillo</option>
+                                            <option value="aro">Aro</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Tamaño" class="form-label">Tamaño:</label>
+                                        <select class="form-select" id="Tamaño">
+                                            <option value="">Seleccionar...</option>
+                                            <option value="grande">Grande</option>
+                                            <option value="mediano">Mediano</option>
+                                            <option value="pequeño">Pequeño</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="centimeters" class="form-label">Centímetros:</label>
+                                        <input type="text" class="form-control" id="centimeters">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="money" class="form-label">Dinero:</label>
+                                        <input type="text" class="form-control" id="money">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="description" class="form-label">Descripción:</label>
+                                        <textarea class="form-control" id="description" rows="3"></textarea>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modifyConfirmationModal">
+                                        Confirmar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación de modificación -->
+    <div class="modal fade" id="modifyConfirmationModal" tabindex="-1" aria-labelledby="modifyConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-secondary text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modifyConfirmationModalLabel">Confirmación de Modificación</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Los datos del producto se han modificado correctamente.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-light mx-2" href="productos_admin.html">Listo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Footer -->
+     <footer class="text-center text-lg-start text-white" style="background-color: #45526e">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            Peramyen
+                        </h6>
+                        <p>
+                            Celebrar o alabar algo o alguien.
+                            <br>
+                            Hecho a mano, Hecho con amor, Hecho para ti
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+  
+                    <hr class="w-100 clearfix d-md-none" />
+  
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Productos</h6>
+                        <p>
+                            <a class="text-white">Aros</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Anillos</a>
+                        </p>
+                    </div>
+  
+                    <!-- Grid column -->
+                    <hr class="w-100 clearfix d-md-none" />
+  
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contactos</h6>
+                        <p><i class="fas fa-envelope mr-3"></i> peramyen@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> +56 9 37497385</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+  
+            <hr class="my-3">
+  
+            <!-- Section: Copyright -->
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <!-- Grid column -->
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <!-- Copyright -->
+                        <div class="p-3">
+                            &copy; 2024 Copyright:
+                            <a class="text-white">peramyen@correo.com</a>
+                        </div>
+                        <!-- Copyright -->
+                    </div>
+                    <!-- Grid column -->
+  
+                    <!-- Grid column -->
+                    <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+  
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                                class="bi bi-twitter"></i></a>
+  
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                                class="bi bi-google"></i></a>
+  
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                                class="bi bi-instagram"></i></a>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+            </section>
+            <!-- Section: Copyright -->
+        </div>
+        <!-- Grid container -->
+    </footer>
+    <!-- Footer -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
