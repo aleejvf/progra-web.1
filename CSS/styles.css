@@ -20,3 +20,7 @@ font-variation-settings:
   border-radius: 10px; /* Bordes redondeados */
   margin-bottom: 20px; /* Espaciado inferior */
 }
+.error-message {
+  color: red;
+  font-size: 14px;
+}

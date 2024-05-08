@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <!-- borte top principal -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link">Envío a todo Chile</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">I</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">Envío Gratis por compras sobre $100.000</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">I</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">Despachos Concepción y RM 24-48hrs hábiles</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+
+    
+      
+    
+    <!-- barra de menu principal responsi -->
+    <nav class="navbar navbar-expand-sm ">
+        <div class="container-fluid">
+            <div class="col">
+              <a href="index.html">    
+        
+               <img src="img/peramyem-logo.jpeg" class="img-fluid" style="max-width:20%;height:auto;">
+                
+              </a>
+            </div>
+          
+            <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+               
+              <!-- iniciar sesion -->
+              <li class="nav-item">
+                <a class="btn btn-outline-secondary mx-2" data-bs-toggle="modal" data-bs-target="#myModal" >
+                    <i class="bi bi-person"></i> Iniciar sesión
+                </a>
+            </li>
+
+            <!-- The Modal -->
+            <div class="modal " id="myModal">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+            
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Iniciar sesion</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+            
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="container mt-3">
+                        <form id="loginForm" action="usuario_normal.html">
+                            <div class="mb-3 mt-3">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pwd">Contraseña:</label>
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <div class="error-message" id="password-error"></div>
+                            </div>
+                            <div class="form-check mb-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="remember"> Recordar contraseña
+                                </label>
+                            </div>
+                            <p><a href="olvido_contraseña.html">¿Olvidaste tu contraseña?</a></p>
+                            <button type="submit" class="btn btn-outline-secondary mx-2">Iniciar</button>
+                            <p><a href="Crear_usuario.html">Registrate</a><a href="user_admin.html"> /cuenta admin/ </a></p>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <li class="nav-item ">
+                <a class="btn btn-outline-secondary mx-2" href="Index_catalogo.html"><i class="bi bi-bag"> Productos</i></a>
+              </li>
+              
+              <li class="nav-item">
+                
+                <a class="btn btn-outline-secondary mx-2" href="Index_carito.html"><i class="bi bi-bag"> Carrito</i></a>
+                
+              </li>
+
+            </ul>
+            
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    
+
+    <!-- barra de informacion -->
+    <div class="row bg-light" style="text-align:center; color: rgb(83, 82, 82); padding: 20px;">
+        <div class="col-sm-4">I    VITRINEA DESDE CASA    I</div>
+        <div class="col-sm-4">I    RECIBE EN TU DOMICILIO    I</div>
+        <div class="col-sm-4">I    RETIRA EN TIENDA    I</div>
+    </div>
+    <div class="container mt-3">
+        <div class="row g-5">
+
+            <div class="content">
+                <div class="row">
+
+
+
+                    <table id="shoppingCart" class="table table-condensed table-responsive">
+                        <thead>
+                            <tr>
+                                <th style="width:60%">Producto</th>
+                                <th style="width:12%">Precio</th>
+                                <th style="width:10%">Cantidad</th>
+                                <th style="width:16%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-md-3 text-left">
+                                            <img src="img/aro_n1.jpg" alt=""
+                                                class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+                                        </div>
+                                        <div class="col-md-9 text-left mt-sm-2">
+                                            <h4>Aros morados</h4>
+                                            <p class="font-weight-light">Los mas populares</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Price">$8.000</td>
+                                <td data-th="Quantity">
+                                    <input type="number" class="form-control form-control-lg text-center" value="1">
+                                </td>
+                                <td class="actions" data-th="">
+                                    <div class="text-right">
+                                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                            <i class="bi bi-arrow-repeat"></i>
+                                        </button>
+                                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-md-3 text-left">
+                                            <img src="img/aro_3.jpg" alt=""
+                                                class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+                                        </div>
+                                        <div class="col-md-9 text-left mt-sm-2">
+                                            <h4>Aros naranja</h4>
+                                            <p class="font-weight-light">Para regalonear</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Price">$5.000</td>
+                                <td data-th="Quantity">
+                                    <input type="number" class="form-control form-control-lg text-center" value="1">
+                                </td>
+                                <td class="actions" data-th="">
+                                    <div class="text-right">
+                                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                            <i class="bi bi-arrow-repeat"></i>
+                                        </button>
+                                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-md-3 text-left">
+                                            <img src="img/aro_4.jpg" alt=""
+                                                class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+                                        </div>
+                                        <div class="col-md-9 text-left mt-sm-2">
+                                            <h4>Aros</h4>
+                                            <p class="font-weight-light">Hazlo especial</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Price">$9.000</td>
+                                <td data-th="Quantity">
+                                    <input type="number" class="form-control form-control-lg text-center" value="1">
+                                </td>
+                                <td class="actions" data-th="">
+                                    <div class="text-right">
+                                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                            <i class="bi bi-arrow-repeat"></i>
+                                        </button>
+                                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="float: right;">
+                    <h4>Subtotal:</h4>
+                    <h1>$22.000</h1>
+                </div>
+
+
+
+                
+                
+            </div>
+            <div class="row mt-4 d-flex">
+                <div class="col-sm-6 mb-3 mb-m-1 text-md-start">
+                    <a href="Index_catalogo.html">
+                        <i class="bi bi-arrow-left mr-2"></i> Seguir viendo</a>
+                </div>
+                <div class="col-sm-6 text-md-end">
+                    <a href="Index_pagar.html" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Pagar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!--revisar esta parte del footer-->
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #45526e">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            Peramyen
+                        </h6>
+                        <p>
+                            Celebrar o alabar algo o alguien.
+                            <br>
+                            Hecho a mano, Hecho con amor, Hecho para ti
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Productos</h6>
+                        <p>
+                            <a class="text-white">Aros</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Anillos</a>
+                        </p>
+                    </div>
+
+                    <!-- Grid column -->
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contactos</h6>
+                        <p><i class="fas fa-envelope mr-3"></i> peramyen@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> +56 9 37497385</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+
+            <hr class="my-3">
+
+            <!-- Section: Copyright -->
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <!-- Grid column -->
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <!-- Copyright -->
+                        <div class="p-3">
+                            &copy; 2024 Copyright:
+                            <a class="text-white">peramyen@correo.com</a>
+                        </div>
+                        <!-- Copyright -->
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                                class="bi bi-twitter"></i></a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                                class="bi bi-google"></i></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                                class="bi bi-instagram"></i></a>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+            </section>
+            <!-- Section: Copyright -->
+        </div>
+        <!-- Grid container -->
+    </footer>
+    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jsale/inici_secion.js"></script>
+</body>
+
+</html>
