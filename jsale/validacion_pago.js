@@ -1,82 +1,103 @@
 
 function validarFormulario() {
-    var nombre = document.getElementById("nombrep").value.trim();
-    var apellido = document.getElementById("lastNamep").value.trim();
-    var email = document.getElementById("emailp").value.trim();
-    var rut = document.getElementById("rutp").value.trim();
-    var direccion = document.getElementById("addressp").value.trim();
-    var codigoPostal = document.getElementById("zipp").value.trim();
-    var nombreTitular = document.getElementById("cc-name").value.trim();
-    var numeroTarjeta = document.getElementById("cc-number").value.trim();
-    var fechaVencimiento = document.getElementById("cc-expiration").value.trim();
-    var cvv = document.getElementById("cc-cvv").value.trim();
+    var nombre = document.getElementById("nombrep").value;
+    var apellido = document.getElementById("lastNamep").value;
+    var email = document.getElementById("emailp").value;
+    var rut = document.getElementById("rutp").value;
+    var direccion = document.getElementById("addressp").value;
+    var codigoPostal = document.getElementById("zipp").value;
+    var nombreTitular = document.getElementById("cc-name").value;
+    var numeroTarjeta = document.getElementById("cc-number").value;
+    var fechaVencimiento = document.getElementById("cc-expiration").value;
+    var cvv = document.getElementById("cc-cvv").value;
 
     var formularioValido = true;
 
     var soloLetras = /^[a-zA-Z\s]*$/;
     var formatoRut = /^\d{1,2}\.\d{3}\.\d{3}[-][0-9kK]{1}$/;
     var soloNumeros = /^[0-9]+$/;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // Validar nombre
     if (nombre === "") {
-        document.getElementById("mensaje_nombre").innerHTML = "Por favor, ingresa tu nombre.";
+        document.getElementById("mensaje_nombre").textContent = "Por favor, ingresa tu nombre.";
         formularioValido = false;
     } else if (!soloLetras.test(nombre) || nombre.length < 2) {
-        document.getElementById("mensaje_nombre").innerHTML = "Nombre inválido.";
+        document.getElementById("mensaje_nombre").textContent = "Nombre inválido.";
         formularioValido = false;
     } else {
-        document.getElementById("mensaje_nombre").innerHTML = "";
+        document.getElementById("mensaje_nombre").textContent = "";
     }
 
     // Validar apellido
     if (apellido === "") {
-        document.getElementById("mensaje_apellido").innerHTML = "Por favor, ingresa tu apellido.";
+        document.getElementById("mensaje_apellido").textContent = "Por favor, ingresa tu apellido.";
         formularioValido = false;
     } else if (!soloLetras.test(apellido) || apellido.length < 2) {
-        document.getElementById("mensaje_apellido").innerHTML = "Apellido inválido.";
+        document.getElementById("mensaje_apellido").textContent = "Apellido inválido.";
         formularioValido = false;
     } else {
-        document.getElementById("mensaje_apellido").innerHTML = "";
+        document.getElementById("mensaje_apellido").textContent = "";
     }
 
-    // Validar email
-    // Aquí puedes agregar la validación del email si lo necesitas
+    // Validar email 
+    if (!emailRegex.test(email)) {
+        document.getElementById("mensaje_email").textContent = "Por favor, ingrese un correo electrónico válido.";
+        isValid = false;
+    }else {
+        document.getElementById("mensaje_email").textContent = "";
+    }
 
     // Validar rut
     if (rut === "") {
-        document.getElementById("mensaje_rut").innerHTML = "Por favor, ingresa tu RUT.";
+        document.getElementById("mensaje_rut").textContent = "Por favor, ingresa tu RUT.";
         formularioValido = false;
     } else if (!formatoRut.test(rut)) {
-        document.getElementById("mensaje_rut").innerHTML = "RUT inválido.";
+        document.getElementById("mensaje_rut").textContent = "RUT inválido.";
         formularioValido = false;
     } else {
-        document.getElementById("mensaje_rut").innerHTML = "";
+        document.getElementById("mensaje_rut").textContent = "";
     }
 
     // Validar dirección
-    if (direccion === "") {
-        document.getElementById("mensaje_direccion").innerHTML = "Por favor, ingresa tu dirección.";
+    if (direccion === ""||direccion.length<=3) {
+        document.getElementById("mensaje_direccion").textContent = "Por favor, ingresa tu dirección.";
         formularioValido = false;
     } else {
-        document.getElementById("mensaje_direccion").innerHTML = "";
+        document.getElementById("mensaje_direccion").textContent = "";
     }
 
     // Validar código postal
-    if (codigoPostal === "" || !soloNumeros.test(codigoPostal) || codigoPostal.length !== 7) {
-        document.getElementById("mensaje_codigo_postal").innerHTML = "Código postal inválido.";
+    if (codigoPostal === "" || !soloNumeros.test(codigoPostal) || codigoPostal.length != 7) {
+        document.getElementById("mensaje_codigo_postal").textContent = "Código postal inválido.";
         formularioValido = false;
     } else {
-        document.getElementById("mensaje_codigo_postal").innerHTML = "";
+        document.getElementById("mensaje_codigo_postal").textContent = "";
+    }
+    // Validar nombre TITULAR
+    if (nombreTitular === "") {
+        document.getElementById("mensaje_nombretitu").textContent = "Por favor, ingresa el nombre del titular.";
+        formularioValido = false;
+    } else if (!soloLetras.test(nombreTitular) || nombreTitular.length < 2) {
+        document.getElementById("mensaje_nombretitu").textContent = "Nombre inválido.";
+        formularioValido = false;
+    } else {
+        document.getElementById("mensaje_nombretitu").textContent = "";
+    }
+    // Validar numero tarjeta
+    if (numeroTarjeta === "" || !soloNumeros.test(numeroTarjeta) || numeroTarjeta.length != 16) {
+        document.getElementById("mensaje_cc_number").textContent = "Numero de la tarjeta es inválido.";
+        formularioValido = false;
+    } else {
+        document.getElementById("mensaje_cc_number").textContent = "";
+    }
+    // Validar cCVV
+    if (cvv === "" || !soloNumeros.test(cvv) || cvv.length != 3) {
+        document.getElementById("mensaje_cc_cvv").textContent = "Código CVV invalido.";
+        formularioValido = false;
+    } else {
+        document.getElementById("mensaje_cc_cvv").textContent = "";
     }
 
-    // Validar nombre del titular
-    // Puedes agregar más validaciones aquí si es necesario
-
-    // Si el formulario es válido, puedes enviarlo
-    if (formularioValido) {
-        // Redirigir a la página de compra
-        window.location.href = "Index_compra.html";
+    return formularioValido;
     }
-
-    return false; // Evitar que el formulario se envíe automáticamente
-}
