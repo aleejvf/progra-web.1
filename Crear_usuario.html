@@ -89,56 +89,56 @@
     <div class="row pt-3">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-            <form action="index.html" method="get" class="was-validated">
+            <form action="index.html" method="get">
                 <div class="mb-3 mt-3">
                     <label for="idrut" class="form-label">Rut</label>
-                    <input type="text" class="form-control" name="rut" id="idrut" required maxlength="10" minlength="9" />
-                    <div class="invalid-feedback">Ej.:12345678-9 (Sin puntos y con guion)</div>
+                    <input type="text" class="form-control" id="idrut" placeholder="11.111.111-1" required onblur="validar_rut()">
+                    <div class="text-danger" id="mensaje_rut"></div>
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="idnombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="idnombre" required minlength="2">
-                    <div class="invalid-feedback">Al menos 2 caracteres</div>
+                    <input type="text" class="form-control" id="idnombre" required onblur="validar_nom()">
+                    <div class="text-danger" id="mensaje_nombre"></div>
                 </div>
                 <div class="mb-3">
                     <label for="idapellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="idapellido" required minlength="2">
-                    <div class="invalid-feedback">Al menos 2 caracteres</div>
+                    <input type="text" class="form-control" id="idapellido"  required onblur="validar_apel()">
+                    <div class="text-danger" id="mensajea"></div>
                 </div>
                 <div class="mb-3">
                     <label for="idcelular" class="form-label">Celular</label>
-                    <input type="number" class="form-control" id="idcelular" required minlength="8" maxlength="8" min="0">
-                    <div class="invalid-feedback">Al menos 8 numeros</div>
+                    <input type="number" class="form-control" id="idcelular" required min="0" onblur="validar_numero()">
+                    <div class="text-danger" id="mensaje_numero"></div>
                 </div>
                 <div class="mb-3">
                     <label for="iddireccion" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" id="iddireccion"required>
-                    <div class="invalid-feedback">Falta direccion</div>
+                    <input type="text" class="form-control" id="iddireccion"  required onblur="validar_direccion()">
+                    <div class="text-danger" id="mensaje_direccion"></div>
                 </div>
                 <div class="mb-3">
                     <label for="idpostal" class="form-label">Codigo Postal</label>
-                    <input type="number" class="form-control" id="idpostal"  required minlength="7" maxlength="7" min="0">
-                    <div class="invalid-feedback">Al menos 7 caracteres</div>
+                    <input type="number" class="form-control" id="idpostal"  required min="0" onblur="validar_postal()">
+                    <div class="text-danger" id="mensaje_postal"></div>
                 </div>
                 <div class="mb-3">
                   <label for="idemail" class="form-label">Email:</label>
-                  <input type="email" class="form-control" id="idemail" placeholder="correo@corrreo.cl" required>
-                  <div class="invalid-feedback">Debe ser valido</div>
+                  <input type="email" class="form-control" id="idemail" placeholder="correo@corrreo.cl" required onblur="validar_email()">
+                  <div class="text-danger" id="mensaje_email"></div>
                 </div>
                 <div class="mb-3">
                   <label for="idpass" class="form-label">Password:</label>
-                  <input type="password" class="form-control" id="idpass" required>
-                  <div class="invalid-feedback">Al menos 6 caracteres</div>
+                  <input type="password" class="form-control" id="idpass" required onblur="clave()">
+                  <div class="text-danger" id="mensaje"></div>
                 </div>
                 <div class="text-center mb-4">
-                    <input type="submit" value="Crear" class="btn btn-success">
+                    <input type="button" value="Crear" class="btn btn-success" onclick="submitcreate()">
                     <a href="index.html" class="btn btn-danger">Cancelar</a>
                 </div>
                 </form>
               </div>
               <div class="col-sm-4"></div>
     </div>
-
+    
 
 
 
@@ -254,7 +254,7 @@
 
 
 
-
+    <script src="js/scriptsf.js"></script>
 
 
 

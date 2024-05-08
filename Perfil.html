@@ -152,13 +152,13 @@
           Una vez borrada tu cuenta no se podra recuperar...
           <br>
           Ingrese su contraseña para continuar
-          <form action="index.html" method="get" class="was-validated">
+          <form action="index.html">
           <div class="mb-3">
             <label for="idpass" class="form-label">Contraseña:</label>
             <input type="password" class="form-control" name="pass" id="idpass" required>
-            <div class="invalid-feedback">ingrese contraseña</div>
+            <div class="text-danger" id="mensaje"></div>
           </div>
-          <input type="submit" value="Aceptar" class="btn btn-success">
+          <input type="button" value="Aceptar" class="btn btn-success" onclick="submitForm()">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
 
         </form>
@@ -271,6 +271,6 @@
         <!-- Grid container -->
     </footer>
     <!-- Footer -->
-    
+    <script src="js/scriptsf.js"></script>
 </body>
 </html>
