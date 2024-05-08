@@ -80,29 +80,28 @@
               <!-- Modal body -->
               <div class="modal-body">
                 <div class="container mt-3">
-                    <h2>Stacked form</h2>
-                    <form action="/action_page.php">
-                      <div class="mb-3 mt-3">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                      </div>
-                      <div class="mb-3">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-                      </div>
-                      <div class="form-check mb-3">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                        </label>
-                      </div>
-                      <p><a  href="olvido_contraseña.html">¿Olvidaste tu contaseña?</a></p>
-                      <a class="btn btn-outline-secondary mx-2" href="usuario_normal.html">Iniciar</a></button>
-                      <p><a href="Crear_usuario.html">Registrate</a><a href="user_admin.html"> /cuenta admin/ </a></p>
+                    <form id="loginForm" action="usuario_normal.html">
+                        <div class="mb-3 mt-3">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd">Contraseña:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                            <div class="error-message" id="password-error"></div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="remember"> Recordar contraseña
+                            </label>
+                        </div>
+                        <p><a href="olvido_contraseña.html">¿Olvidaste tu contraseña?</a></p>
+                        <button type="submit" class="btn btn-outline-secondary mx-2">Iniciar</button>
+                        <p><a href="Crear_usuario.html">Registrate</a><a href="user_admin.html"> /cuenta admin/ </a></p>
                     </form>
-                  </div>
-                  
+                </div>
               </div>
-        
             </div>
           </div>
         </div>
@@ -171,78 +170,91 @@
           </div>
           <div class="col-md-7 col-lg-8">
             <h4 class="mb-3">Datos de Facturacion</h4>
-            <form class="needs-validation" novalidate>
-              <div class="row g-3">
-                <div class="col-sm-6">
-                  <label for="nombre" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="nombre">
+              <form action="Index_compra.html" class="needs-validation" novalidate>
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombrep">
+                        <div class="text-danger" id="mensaje_nombre"></div>
+                    </div>
+            
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastNamep">
+                        <div class="text-danger" id="mensaje_apellido"></div>
+                    </div>
+            
+                    <div class="col-sm-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailp">
+                        <div class="text-danger" id="mensaje_email"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="rut" class="form-label">Rut</label>
+                        <input type="text" class="form-control" id="rutp">
+                        <div class="text-danger" id="mensaje_rut"></div>
+                    </div>
+            
+                    <div class="col-12">
+                        <label for="address" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="addressp">
+                        <div class="text-danger" id="mensaje_direccion"></div>
+                    </div>
+            
+                    <div class="col-md-3">
+                        <label for="zip" class="form-label">Codigo Postal</label>
+                        <input type="text" class="form-control" id="zipp">
+                        <div class="text-danger" id="mensaje_codigo_postal"></div>
+                    </div>
                 </div>
-    
-                <div class="col-sm-6">
-                  <label for="lastName" class="form-label">Apellido</label>
-                  <input type="text" class="form-control" id="lastName">
+            
+                <hr class="my-4">
+            
+                <h4 class="mb-3">Metodo de pago</h4>
+            
+                <div class="my-3">
+                    <div class="form-check">
+                        <input id="credito" name="paymentMethod" type="radio" class="form-check-input" checked>
+                        <label class="form-check-label" for="credito">Tarjeta de Credito</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="debito" name="paymentMethod" type="radio" class="form-check-input">
+                        <label class="form-check-label" for="debito">Tarjeta de debito</label>
+                    </div>
                 </div>
-    
-                <div class="col-12">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email">
+            
+                <div class="row gy-3">
+                    <div class="col-md-6">
+                        <label for="cc-name" class="form-label">Nombre del titular</label>
+                        <input type="text" class="form-control" id="cc-name">
+                        <div class="text-danger" id="mensaje_cc_name"></div>
+                    </div>
+            
+                    <div class="col-md-6">
+                        <label for="cc-number" class="form-label">Numero de tarjeta</label>
+                        <input type="number" class="form-control" id="cc-number">
+                        <div class="text-danger" id="mensaje_cc_number"></div>
+                    </div>
+            
+                    <div class="col-md-3">
+                        <label for="cc-expiration" class="form-label">Fecha de vencimiento</label>
+                        <input type="month" class="form-control" id="cc-expiration">
+                        <div class="text-danger" id="mensaje_cc_expiration"></div>
+                    </div>
+            
+                    <div class="col-md-3">
+                        <label for="cc-cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cc-cvv">
+                        <div class="text-danger" id="mensaje_cc_cvv"></div>
+                    </div>
                 </div>
-    
-                <div class="col-12">
-                  <label for="address" class="form-label">Direccion</label>
-                  <input type="text" class="form-control" id="address">
+            
+                <div>
+                    <button class="btn btn-primary mt-3" onclick="validarFormulario()">Pagar</button>
+                    <a href="Index_carito.html" class="btn btn-primary mt-3">Volver al carrito</a>
                 </div>
-    
-                <div class="col-md-3">
-                  <label for="zip" class="form-label">Codigo Postal</label>
-                  <input type="text" class="form-control" id="zip">
-              </div>
-    
-              <hr class="my-4">
-    
-              <h4 class="mb-3">Metodo de pago</h4>
-    
-              <div class="my-3">
-                <div class="form-check">
-                  <input id="credito" name="paymentMethod" type="radio" class="form-check-input" checked>
-                  <label class="form-check-label" for="credito">Tarjeta de Credito</label>
-                </div>
-                <div class="form-check">
-                  <input id="debito" name="paymentMethod" type="radio" class="form-check-input">
-                  <label class="form-check-label" for="debito">Tarjeta de debito</label>
-                </div>
-                <div class="form-check">
-                  <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
-                  <label class="form-check-label" for="paypal">PayPal</label>
-                </div>
-              </div>
-    
-              <div class="row gy-3">
-                <div class="col-md-6">
-                  <label for="cc-name" class="form-label">Nombre del titular</label>
-                  <input type="text" class="form-control" id="cc-name">
-                </div>
-    
-                <div class="col-md-6">
-                  <label for="cc-number" class="form-label">Numero de tarjeta</label>
-                  <input type="number" class="form-control" id="cc-number">
-                </div>
-    
-                <div class="col-md-3">
-                  <label for="cc-expiration" class="form-label">Fecha de vencimiento</label>
-                  <input type="month" class="form-control" id="cc-expiration">
-                </div>
-    
-                <div class="col-md-3">
-                  <label for="cc-cvv" class="form-label">CVV</label>
-                  <input type="text" class="form-control" id="cc-cvv">
-                </div>
-              </div>
-              <div>
-                <a href="Index_compra.html" class="btn btn-primary mt-3">Pagar</a>
-                <a href="Index_carito.html" class="btn btn-primary mt-3">Volver al carrito</a>
-              </div>
-              <hr class="my-4">
+            
+                <hr class="my-4">
             </form>
           </div>
         </div>
@@ -343,6 +355,8 @@
       <!-- Grid container -->
   </footer>
   <!-- Footer -->
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jsale/inici_secion.js"></script>
+    <script src="jsale/validacion_pago.js"></script>
 </body>
 </html>
