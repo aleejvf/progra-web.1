@@ -92,34 +92,60 @@
       <div class="col-sm-4">I    RETIRA EN TIENDA    I</div>
   </div>
 
-        <form class="container">
+
+
+  <div class="row pt-3">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <form action="perfil.html" method="get" class="was-validated">
             <div class="mb-3 mt-3">
-                <label for="text" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="name" value="juan">
+                <label for="idnombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="idnombre" value="juan" required minlength="2">
+                <div class="invalid-feedback">Al menos 2 caracteres</div>
             </div>
             <div class="mb-3">
-                <label for="text" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="lastname" value="perez">
+                <label for="idapellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="idapellido" value="perez" required minlength="2">
+                <div class="invalid-feedback">Al menos 2 caracteres</div>
             </div>
             <div class="mb-3">
-                <label for="text" class="form-label">Direccion</label>
-                <input type="text" class="form-control" id="addres" value="calle 4, Av. 2">
+                <label for="idcelular" class="form-label">Celular</label>
+                <input type="number" class="form-control" id="idcelular" value="34857290" required minlength="8" maxlength="8" min="0">
+                <div class="invalid-feedback">Al menos 8 numeros</div>
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="email" value="correo@corrreo.cl">
+                <label for="iddireccion" class="form-label">Direccion</label>
+                <input type="text" class="form-control" id="iddireccion" value="calle 4, Av. 2" required>
+                <div class="invalid-feedback">Falta direccion</div>
             </div>
             <div class="mb-3">
-              <label for="pwd" class="form-label">Password:</label>
-              <input type="password" class="form-control" id="pwd" value="123456">
+                <label for="idpostal" class="form-label">Codigo Postal</label>
+                <input type="number" class="form-control" id="idpostal" value="1234567" required minlength="7" maxlength="7" min="0">
+                <div class="invalid-feedback">Al menos 7 caracteres</div>
+            </div>
+            <div class="mb-3">
+              <label for="idemail" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="idemail" value="correo@corrreo.cl" required>
+              <div class="invalid-feedback">Debe ser valido</div>
+            </div>
+            <div class="mb-3">
+              <label for="idpass" class="form-label">Password:</label>
+              <input type="password" class="form-control" id="idpass" value="123456" required>
+              <div class="invalid-feedback">Al menos 6 caracteres</div>
             </div>
             <div class="text-center mb-4">
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
-                    Actualizar
-                  </button>
+                <input type="submit" value="Actualizar" class="btn btn-success">
                 <a href="Perfil.html" class="btn btn-danger">Cancelar</a>
             </div>
             </form>
+          </div>
+          <div class="col-sm-4"></div>
+</div>
+
+<!--  data-bs-toggle="modal" data-bs-target="#myModal"  para llamar al modal en caso que este todo validado-->
+
+
+
 
   <!-- The Modal -->
   <div class="modal" id="myModal">
