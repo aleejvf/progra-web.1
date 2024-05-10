@@ -239,9 +239,6 @@ function submitpagar(){
 }
 
 
-
-
-
 function validar_rut() {
     var rutInput = document.getElementById('idrut').value;
     var mensajeRut = document.getElementById('mensaje_rut');
