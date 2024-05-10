@@ -44,7 +44,7 @@
     <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
             <div class="col">
-              <a href="usuario_normal.html">    
+              <a href="index.html">    
         
                <img src="img/peramyem-logo.jpeg" class="img-fluid" style="max-width:20%;height:auto;">
                 
@@ -57,17 +57,62 @@
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
                
-
-           
-            <li class="nav-item ">
-              <a class="btn btn-outline-secondary mx-2" href="Catalogo.html"><i class="bi bi-bag"> Productos</i></a>
+              <!-- iniciar sesion -->
+              <li class="nav-item">
+                <a class="btn btn-outline-secondary mx-2" data-bs-toggle="modal" data-bs-target="#myModal" >
+                    <i class="bi bi-person"></i> Iniciar sesión
+                </a>
             </li>
+
+            <!-- The Modal -->
+            <div class="modal " id="myModal">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+            
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Iniciar sesion</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+            
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="container mt-3">
+                        <form id="loginForm" action="usuario_normal.html">
+                            <div class="mb-3 mt-3">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pwd">Contraseña:</label>
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <div class="error-message" id="password-error"></div>
+                            </div>
+                            <div class="form-check mb-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="remember"> Recordar contraseña
+                                </label>
+                            </div>
+                            <p><a href="olvido_contraseña.html">¿Olvidaste tu contraseña?</a></p>
+                            <button type="submit" class="btn btn-outline-secondary mx-2">Iniciar</button>
+                            <p><a href="Crear_usuario.html">Registrate</a><a href="user_admin.html"> /cuenta admin/ </a></p>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <li class="nav-item ">
+                <a class="btn btn-outline-secondary mx-2" href="Index_catalogo.html"><i class="bi bi-bag"> Productos</i></a>
+              </li>
               
               <li class="nav-item">
                 
-                <a class="btn btn-outline-secondary mx-2" href="Carrito.html"><i class="bi bi-bag"> Carrito</i></a>
+                <a class="btn btn-outline-secondary mx-2" href="Index_carito.html"><i class="bi bi-bag"> Carrito</i></a>
                 
               </li>
+
             </ul>
             
             <form class="d-flex">

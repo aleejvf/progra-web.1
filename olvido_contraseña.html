@@ -75,39 +75,38 @@
                   <!-- Modal body -->
                   <div class="modal-body">
                     <div class="container mt-3">
-                        <h2>Stacked form</h2>
-                        <form action="/action_page.php">
-                          <div class="mb-3 mt-3">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                          </div>
-                          <div class="mb-3">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-                          </div>
-                          <div class="form-check mb-3">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                            </label>
-                          </div>
-                          <p><a  href="olvidado contaseña">¿Olvidaste tu contaseña?</a></p>
-                          <button type="submit" class="btn btn-primary">Iniciar</button>
-                          <p><a href="Crear_usuario.html">Registrate</a><a href="user_admin.html"> /cuenta admin/ </a><a href="usuario_normal.html">/cuenta normal/</a></p>
+                        <form id="loginForm" action="usuario_normal.html">
+                            <div class="mb-3 mt-3">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pwd">Contraseña:</label>
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <div class="error-message" id="password-error"></div>
+                            </div>
+                            <div class="form-check mb-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="remember"> Recordar contraseña
+                                </label>
+                            </div>
+                            <p><a href="olvido_contraseña.html">¿Olvidaste tu contraseña?</a></p>
+                            <button type="submit" class="btn btn-outline-secondary mx-2">Iniciar</button>
+                            <p><a href="Crear_usuario.html">Registrate</a><a href="user_admin.html"> /cuenta admin/ </a></p>
                         </form>
-                      </div>
-                      
+                    </div>
                   </div>
-            
                 </div>
               </div>
             </div>
               <li class="nav-item ">
-                <a class="btn btn-outline-secondary mx-2" href="Catalogo.html"><i class="bi bi-bag"> Productos</i></a>
+                <a class="btn btn-outline-secondary mx-2" href="Index_catalogo.html"><i class="bi bi-bag"> Productos</i></a>
               </li>
               
               <li class="nav-item">
                 
-                <a class="btn btn-outline-secondary mx-2" href="Carrito.html"><i class="bi bi-bag"> Carrito</i></a>
+                <a class="btn btn-outline-secondary mx-2" href="Index_carito.html"><i class="bi bi-bag"> Carrito</i></a>
                 
               </li>
 
