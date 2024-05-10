@@ -238,6 +238,11 @@ function submitpagar(){
     }
 }
 
+function submitpagara(){
+    if(validarCantidadProductos()===true){
+        window.location.href = "Index_pagar.html"; 
+    }
+}
 
 function validar_rut() {
     var rutInput = document.getElementById('idrut').value;
