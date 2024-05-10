@@ -98,6 +98,25 @@ function validarFormulario() {
     } else {
         document.getElementById("mensaje_cc_cvv").textContent = "";
     }
+     // Validar que la fecha de vencimiento no esté vacía
+     if (fechaVencimiento === '') {
+        document.getElementById('mensaje_cc_expiration').innerHTML = '¡Por favor ingrese una fecha de vencimiento!';
+        formularioValido = false;
+        return;
+    }
+    
+    var fechaActual = new Date();
+    var fechaIngresada = new Date(fechaVencimiento);
+
+    // Validar si la fecha ingresada es mayor que la fecha actual
+    if (fechaIngresada <= fechaActual) {
+        document.getElementById('mensaje_cc_expiration').innerHTML = '¡La fecha de vencimiento debe ser mayor que la fecha actual!';
+        formularioValido = false;
+        return;
+    }
+
+    // Si pasa las validaciones, borrar cualquier mensaje de error anterior
+    document.getElementById('mensaje_cc_expiration').innerHTML = '';
 
     return formularioValido;
     }
