@@ -4,7 +4,6 @@ function clave() {
     // Al menos 8 caracteres
     if (contraseña.length < 8) {
         document.getElementById("mensaje").className = "text-danger"
-        console.log("sdas")
         document.getElementById("mensaje").innerHTML = "La contraseña debe tener al menos 8 caracteres.";
         return false;
     } else if (contraseña.length >= 8) {
@@ -33,6 +32,33 @@ function clave() {
         return true;
     }
 }
+
+function misma_clave() {
+    var contraseña = document.getElementById("confirm-password").value;
+    var contraseña_nueva = document.getElementById("idpass").value;
+
+        if (contraseña_nueva==""){        
+            document.getElementById("mensaje2").className = "text-danger"
+            document.getElementById("mensaje2").innerHTML = "La contraseña no puede estar vacia";
+            return false;
+        }else if(contraseña_nueva!=contraseña){
+            document.getElementById("mensaje2").className = "text-danger"
+            document.getElementById("mensaje2").innerHTML = "La contraseña deben de ser iguales";
+            return false;
+        }else{
+        // La contraseña es válida
+            document.getElementById("mensaje2").className = "text-success"
+            document.getElementById("mensaje2").innerHTML = "Contraseña valida";// Limpiar el mensaje de error si la contraseña es válida
+            return true;  
+        }
+}
+
+function submitpass() {
+    if (clave() === true && misma_clave()===true) {
+        window.location.href = "index.html"; 
+    }
+}
+
 
 function submitForm() {
     if (clave() === true) {
