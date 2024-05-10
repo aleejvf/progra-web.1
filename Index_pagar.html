@@ -170,40 +170,40 @@
           </div>
           <div class="col-md-7 col-lg-8">
             <h4 class="mb-3">Datos de Facturacion</h4>
-              <form action="Index_compra.html" class="needs-validation" novalidate>
+              <form  class="needs-validation" action="Index_compra.html">
                 <div class="row g-3">
                     <div class="col-sm-6">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombrep">
+                        <label for="nombrep" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombrep" required>
                         <div class="text-danger" id="mensaje_nombre"></div>
                     </div>
             
                     <div class="col-sm-6">
-                        <label for="lastName" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="lastNamep">
+                        <label for="lastNamep" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastNamep"required>
                         <div class="text-danger" id="mensaje_apellido"></div>
                     </div>
             
                     <div class="col-sm-6">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailp">
+                        <label for="emailp" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailp"required>
                         <div class="text-danger" id="mensaje_email"></div>
                     </div>
                     <div class="col-sm-6">
-                        <label for="rut" class="form-label">Rut</label>
-                        <input type="text" class="form-control" id="rutp">
+                        <label for="rutp" class="form-label">Rut</label>
+                        <input type="text" class="form-control" id="rutp"required>
                         <div class="text-danger" id="mensaje_rut"></div>
                     </div>
             
                     <div class="col-12">
-                        <label for="address" class="form-label">Direccion</label>
-                        <input type="text" class="form-control" id="addressp">
+                        <label for="addressp" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="addressp"required>
                         <div class="text-danger" id="mensaje_direccion"></div>
                     </div>
             
                     <div class="col-md-3">
-                        <label for="zip" class="form-label">Codigo Postal</label>
-                        <input type="text" class="form-control" id="zipp">
+                        <label for="zipp" class="form-label">Codigo Postal</label>
+                        <input type="text" class="form-control" id="zipp"required>
                         <div class="text-danger" id="mensaje_codigo_postal"></div>
                     </div>
                 </div>
@@ -226,13 +226,13 @@
                 <div class="row gy-3">
                     <div class="col-md-6">
                         <label for="cc-name" class="form-label">Nombre del titular</label>
-                        <input type="text" class="form-control" id="cc-name">
-                        <div class="text-danger" id="mensaje_cc_name"></div>
+                        <input type="text" class="form-control" id="cc-name"required>
+                        <div class="text-danger" id="mensaje_nombretitu"></div>
                     </div>
             
                     <div class="col-md-6">
                         <label for="cc-number" class="form-label">Numero de tarjeta</label>
-                        <input type="number" class="form-control" id="cc-number">
+                        <input type="number" class="form-control" id="cc-number"required>
                         <div class="text-danger" id="mensaje_cc_number"></div>
                     </div>
             
