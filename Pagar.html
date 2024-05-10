@@ -102,6 +102,11 @@
   </div>
   <div class="container mt-3">
     <div class="row g-5">
+
+
+
+
+
       <div class="col-md-5 col-lg-4 order-md-last">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-primary">Tu carrito</span>
@@ -133,6 +138,24 @@
             <span>Total</span>
             <strong>$22.000</strong>
           </li>
+          <hr class="my-4">
+          <div class="p-3 bg-success text-light rounded shadow">
+            <p>Valor dolar:</p>
+            <div class="spinner">
+                <span class="spinner-grow spinner-grow-sm"></span>
+                Cargando..
+            </div>
+            <h4 id="dolar"></h4>
+        </div>
+        <hr class="my-2">
+        <div class="p-3 bg-primary text-light rounded shadow">
+          <p>Valor Euro:</p>
+          <div class="spinner">
+              <span class="spinner-grow spinner-grow-sm"></span>
+              Cargando..
+          </div>
+          <h4 id="euro"></h4>
+      </div>
         </ul>
 
       </div>
@@ -199,7 +222,7 @@
 
               <div class="col-md-3">
                 <label for="idfecha" class="form-label">Fecha de vencimiento</label>
-                <input type="month" class="form-control" id="idfecha" required  onblur="validar_fecha()">
+                <input type="month" class="form-control" id="idfecha" required min="2024-05" onblur="validar_fecha()">
                 <div class="text-danger" id="mensaje_fecha"></div>
               </div>
 
@@ -315,6 +338,14 @@
   </footer>
   <!-- Footer -->
   <script src="js/scriptsf.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"
+  integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+  integrity="sha384-i+dHPTzZw7YVZOx9lbH5l6lP74sLRtMtwN2XjVqjf3uAGAREAF4LMIUDTWEVs4LI"
+  crossorigin="anonymous"></script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/querysindex.js"></script>
 </body>
 
 </html>
