@@ -139,18 +139,21 @@
                     <div class="card-body">
                         <form id="resetPasswordForm">
                             <div class="mb-3">
-                                <label for="email" class="form-label">Correo Electrónico:</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <label for="idemail" class="form-label">Correo Electrónico:</label>
+                                <input type="email" class="form-control" id="idemail" name="email" required onblur="validar_email()">
+                                <div class="text-danger" id="mensaje_email"></div>
                             </div>
                             <div class="mb-3">
-                                <label for="password" class="form-label">Nueva Contraseña:</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <label for="idpass" class="form-label">Nueva Contraseña:</label>
+                                <input type="password" class="form-control" id="idpass" name="password" required onblur="clave()">
+                                <div class="text-danger" id="mensaje"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="confirm-password" class="form-label">Confirmar Contraseña:</label>
-                                <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+                                <input type="password" class="form-control" id="confirm-password" name="confirm-password" required onblur="misma_clave()" >
+                                <div class="text-danger" id="mensaje2"></div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Restablecer Contraseña</button>
+                            <input type="button" value="Restablecer Contraseña" class="btn btn-primary" onclick="submitpass()">
                         </form>
                     </div>
                 </div>
@@ -295,7 +298,11 @@
       <!-- Grid container -->
   </footer>
   <!-- Footer -->
+<<<<<<< HEAD
 
+=======
+  <script src="js/scriptsf.js"></script>
+>>>>>>> origin/felipe
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
