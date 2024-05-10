@@ -229,9 +229,15 @@ function validarCantidadProductos() {
       }
     }
     
-    alert("Actualizado.");
     return true;
 }
+
+function submitpagar(){
+    if(validarCantidadProductos()===true){
+        window.location.href = "pagar.html"; 
+    }
+}
+
 
 function validar_rut() {
     var rutInput = document.getElementById('idrut').value;
