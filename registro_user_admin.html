@@ -99,6 +99,11 @@
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Buscar por nombre" aria-label="Buscar por nombre" aria-describedby="button-addon2">
             <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
+            
+            <div class="col-md-6 text-end">
+                <!-- Botón para abrir el modal de agregar producto -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">Agregar Producto</button>   
+            </div>
         </div>
         
         <!-- Tabla de usuarios -->
@@ -125,6 +130,9 @@
                         <td>usuario@example.com</td>
                         <td>contraseña123</td>
                         <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
@@ -138,6 +146,9 @@
                         <td>usuario@example.com</td>
                         <td>contraseña123</td>
                         <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
@@ -151,6 +162,9 @@
                         <td>usuario@example.com</td>
                         <td>contraseña123</td>
                         <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
@@ -164,6 +178,9 @@
                         <td>usuario@example.com</td>
                         <td>contraseña123</td>
                         <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
@@ -177,6 +194,9 @@
                         <td>usuario@example.com</td>
                         <td>contraseña123</td>
                         <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
@@ -190,6 +210,9 @@
                         <td>usuario@example.com</td>
                         <td>contraseña123</td>
                         <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
@@ -203,6 +226,9 @@
                         <td>usuario@example.com</td>
                         <td>contraseña123</td>
                         <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
@@ -216,6 +242,9 @@
                         <td>usuario@example.com</td>
                         <td>contraseña123</td>
                         <td>
+                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modifyProductModal">
+                                <i class="bi bi-pencil"></i> Modificar
+                            </button>
                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
@@ -225,6 +254,47 @@
                     <!-- Puedes agregar más filas según la cantidad de usuarios -->
                 </tbody>
             </table>
+        </div>
+    </div>
+    <!-- Modal para añadir producto -->
+    <form id="productForm" onsubmit="return validateForm()">
+        <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addProductModalLabel">Añadir Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulario para agregar producto -->
+                        <div class="container product-container">
+                            <div class="row">
+                                <div >
+                                    <!-- falta la info de entrsada -->
+                                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Modal de confirmación -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El producto se ha añadido correctamente.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-secondary mx-2" href="productos_admin.html">Listo</a>
+                </div>
+            </div>
         </div>
     </div>
      <!-- Modal de confirmación de eliminación -->
@@ -240,6 +310,49 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary mx-2" data-bs-dismiss="modal">Cancelar</button>
                     <a class="btn btn-danger" href="registro_user_admin.html">Aceptar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal para modificar producto -->
+    
+    <div class="modal fade" id="modifyProductModal" tabindex="-1" aria-labelledby="modifyProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modifyProductModalLabel">Modificar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para modificar producto -->
+                    <div class="container product-container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <form id="modifyProductForm" onsubmit="return validateModifyForm()">
+                                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Modal de confirmación de modificación no funciona-->
+    <div class="modal fade" id="modifyConfirmationModal" tabindex="-1" aria-labelledby="modifyConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-secondary text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modifyConfirmationModalLabel">Confirmación de Modificación</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Los datos del producto se han modificado correctamente.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-light mx-2" href="productos_admin.html">Listo</a>
                 </div>
             </div>
         </div>
