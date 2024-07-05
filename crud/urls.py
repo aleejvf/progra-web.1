@@ -41,7 +41,7 @@ urlpatterns = [
     path('pagar_s/',pagar_s, name='pagar_s'),
     path('pagar/<id>',pagar, name='pagar'),
     path('pagar_s/add_to_cart_and_redirect_anoni//<int:product_id>/',views.add_to_cart_and_redirect_anoni, name='add_to_cart_and_redirect_anoni'),
-    path('pagar/add-to-cart-and-redirect//<int:product_id>/<str:username>/',views.add_to_cart_and_redirect, name='add_to_cart_and_redirect'),
+    path('pagar/add-to-cart-and-redirect//<int:product_id>/<int:id>/',views.add_to_cart_and_redirect, name='add_to_cart_and_redirect'),
     path('pagar/confirma/<id>',views.confirma, name='confirma'),
 
  

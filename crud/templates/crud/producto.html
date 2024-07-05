@@ -77,7 +77,7 @@
                 </form>
 
                 {% if user.is_authenticated %}
-                <form action="{% url 'add_to_cart_and_redirect' product_id=item.id username=user.username %}"
+                <form action="{% url 'add_to_cart_and_redirect' product_id=item.id user.id=user.id %}"
                     method="post">
                     {% csrf_token %}
                     <input type="hidden" id="contador1" name="contador" value="1" min="0">

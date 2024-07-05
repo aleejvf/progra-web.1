@@ -83,7 +83,7 @@ def index(request):
 
 #######################BORRA CUENTA DE USUARIO#################################
 def eliminar(request,id):
-    persona=get_object_or_404(User, username=id)
+    persona=get_object_or_404(User, id=id)
     
     if request.method=="POST":
         
@@ -297,7 +297,7 @@ def disminuir_cantidad(request, item_id):
 #######################MUESTRA EL PERFIL#######################################
 def perfil(request,id):
 
-    persona=get_object_or_404(User,username=id)  
+    persona=get_object_or_404(User,id=id)  
     datos={
         "perfil":persona
     }
@@ -306,7 +306,7 @@ def perfil(request,id):
 
 #######################MODIFICA DATOS DEL USUARIO##############################
 def modificar_usuario(request,id):
-    persona=get_object_or_404(User,username=id)
+    persona=get_object_or_404(User,id=id)
     form=UpdateUserForm(instance=persona)
     
     if request.method=="POST":
@@ -442,7 +442,7 @@ def detalle_registro(request, id):
 
 #######################MUESTRA DATOS DEL USUARIO AL PAGAR######################
 def pagar(request,id):
-    persona=get_object_or_404(User,username=id)  
+    persona=get_object_or_404(User,id=id)  
     if request.user.is_authenticated:
         carrito, created = Carrito.objects.get_or_create(usuario=request.user)
     else:
@@ -466,7 +466,7 @@ def pagar(request,id):
 ###############################################################################
 
 #######################MANDA A PAGAR EL PRODUCTO CON USUARIO###################
-def add_to_cart_and_redirect(request, product_id, username):
+def add_to_cart_and_redirect(request, product_id, id):
     producto = get_object_or_404(Producto, id=product_id)
 
     if request.user.is_authenticated:
@@ -497,7 +497,7 @@ def add_to_cart_and_redirect(request, product_id, username):
     carrito.save()
 
     # Redirigir a la página de pago después de agregar al carrito
-    return redirect('pagar', username)
+    return redirect('pagar', id)
 ###############################################################################
 
 #######################MANDA A PAGAR EL PRODUCTO SIN USUARIO###################

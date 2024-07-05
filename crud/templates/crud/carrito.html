@@ -84,7 +84,7 @@
 
             {% if user.is_authenticated %}
             {% if carrito.total > 0 %}
-            <a href="{% url "pagar" user.username%}" class="btn btn-primary btn-lg">Comprar</a>
+            <a href="{% url "pagar" user.id%}" class="btn btn-primary btn-lg">Comprar</a>
             {% else %}
             <a href="" class="btn btn-primary btn-lg disabled">Comprar</a>
             {% endif %}

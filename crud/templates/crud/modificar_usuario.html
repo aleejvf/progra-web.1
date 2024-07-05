@@ -12,7 +12,7 @@
       {{form | crispy}}
       <div class="text-center mb-4">
         <button type="button" onclick="validarFormularioModificar()" class="btn btn-success">Actualizar</button>
-        <a href="{% url "perfil" persona.username%} " class=" btn btn-danger">Cancelar</a>
+        <a href="{% url "perfil" persona.id%} " class=" btn btn-danger">Cancelar</a>
       </div>
     </form>
   </div>
