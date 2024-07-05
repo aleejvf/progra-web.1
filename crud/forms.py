@@ -11,6 +11,9 @@ class FiltroProductoForm(forms.Form):
         required=False
     )
 
+
+
+
 ##CREA USUARIOS
 class UserForm(UserCreationForm):
 
@@ -22,11 +25,7 @@ class UserForm(UserCreationForm):
 class UpdateUserForm(forms.ModelForm):
     class Meta:
         model=User
-        fields=['username','first_name','last_name','celular','email','direccion','postal','password']
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['password'].widget = forms.PasswordInput()
+        fields=['username','first_name','last_name','celular','email','direccion','postal']
 
 ##OLVIDO CONTRASEÑA
 class UsernameEmailForm(forms.Form):

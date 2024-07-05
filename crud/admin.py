@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Carrito_item,Carrito, User, Producto,Categoria,Registro,RegistroItem
+from .models import Carrito_item,Carrito, User, Producto,Registro,RegistroItem
 
 
 # VISTA PARA PROBAR EN EL ADMIN DJANGO
@@ -14,7 +14,6 @@ admin.site.register(Registro)
 admin.site.register(RegistroItem)
 admin.site.register(Carrito)
 admin.site.register(Carrito_item,AdmcarritoI)
-admin.site.register(Categoria)
 admin.site.register(User)
 
 

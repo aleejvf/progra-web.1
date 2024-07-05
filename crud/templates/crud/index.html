@@ -29,15 +29,6 @@
 
 
     </div>
-
-    <div class="row">
-        {% for categoria in categorias %}
-        <div class="col-md-3 mb-3">
-            <a href="{% url "catalogo" categoria.id %}"  class="btn btn-primary">{{ categoria.descripcion }}</a>
-        </div>
-        {% endfor %}
-    </div>
-
 </div>
 
 {% endblock contenido %}

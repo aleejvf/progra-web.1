@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from datetime import date
-from .models import Producto,User,Carrito,Carrito_item,Categoria,Registro,RegistroItem
+from .models import Producto,User,Carrito,Carrito_item,Registro,RegistroItem
 from django.shortcuts import get_object_or_404, redirect
 from .forms import UpdateUserForm, FiltroProductoForm,UsernameEmailForm
 from os import remove, path
@@ -66,19 +66,7 @@ def cerrar_sesion(request):
 
 #######################INDEX###################################################
 def index(request):
-    fecha=date.isoformat(date.today())
-    texto="Para traer los datos desde la vista se debe enviar a través del contexto de datos"
-    lista=['Alfajor', 'Poleron', 'Paraguas','Gorro','Cruz con Micrófono']
-    elementos=len(lista)
-    categorias = Categoria.objects.all()
-    datos={
-        "fecha":fecha,
-        "msg":texto,
-        "lista":lista,
-        "items":elementos,
-        'categorias': categorias
-    }
-    return render(request,'crud/index.html', datos)
+    return render(request,'crud/index.html')
 ###############################################################################
 
 #######################BORRA CUENTA DE USUARIO#################################
@@ -115,7 +103,7 @@ def obtener_rango(precio):
 
 #######################MUESTRA CATALOGO CON FILTRO#############################
 def catalogo(request,id):
-    categoria=get_object_or_404(Categoria,id=id)
+    categoria=get_object_or_404(Producto,categoria=id)
     catalogo = Producto.objects.filter(categoria=categoria)
     form = FiltroProductoForm(request.GET)
     

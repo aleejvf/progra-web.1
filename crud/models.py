@@ -12,30 +12,15 @@ class User(AbstractUser):
     postal=models.IntegerField(default=0, validators=[MinValueValidator(0),MaxValueValidator(9999999)], null=False)
 
 
-# MODELO CATEGORIA
-class Categoria(models.Model):
-    descripcion = models.CharField(max_length=200, null=False)
-
-    def __str__(self) -> str:
-        return f"Id: {self.pk} | Descripcion: {self.descripcion}"
-
 # MODELO PRODUCTO
 class Producto(models.Model):
-    GRANDE = 'Grande'
-    MEDIANO = 'Mediano'
-    PEQUEÑO = 'Pequeño'
-    TAMAÑO_CHOICES = [
-        (GRANDE, 'Grande'),
-        (MEDIANO, 'Mediano'),
-        (PEQUEÑO, 'Pequeño'),
-    ]
     nombre=models.CharField(max_length=50, null=False)
-    descripcion=models.CharField(max_length=100, null=False)
-    foto=models.ImageField(upload_to='personas',null=True)
+    descripcion = models.TextField(null=False)
+    foto=models.ImageField(upload_to='productos',null=True)
     precio=models.IntegerField(default=0, validators=[MinValueValidator(0)])
     cantidad_disponible = models.IntegerField(default=0, validators=[MinValueValidator(0)])
-    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE, related_name="productos")
-    tamaño = models.CharField(max_length=7, choices=TAMAÑO_CHOICES)
+    categoria = models.CharField(max_length=6, choices=TIPO_CHOICES)
+    tamaño = models.CharField(max_length=7, choices=TAMANO_CHOICES)
 
     def __str__ (self):
         return f"{self.id} -  {self.nombre} {self.descripcion}"
@@ -43,7 +28,7 @@ class Producto(models.Model):
 # MODELO CARRITO
 class Carrito(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name="carrito", blank=True, null=True)
-    total = models.DecimalField(default=0,null=False, max_digits=10, decimal_places=2)
+    total = models.IntegerField(default=0,null=False)
 
     def __str__(self) -> str:
         return f"Id: {self.pk} | Usuario_id: {self.usuario.id if self.usuario else 'Anónimo'} | Total: {self.total}"
@@ -68,17 +53,21 @@ class Registro(models.Model):
     direccion = models.CharField(max_length=255, null=True, blank=True)
     celular = models.CharField(max_length=15, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
-    total = models.DecimalField(max_digits=10, decimal_places=2)
+    total = models.IntegerField(default=0,null=False)
     fecha_compra = models.DateTimeField(auto_now_add=True)
 
 # MODELO DEL DETALLE DEL REGISTRO
 class RegistroItem(models.Model):
-    compra = models.ForeignKey(Registro, on_delete=models.CASCADE)
-    producto = models.ForeignKey('Producto', on_delete=models.CASCADE)
-    cantidad = models.PositiveIntegerField()
-    precio_producto = models.DecimalField(max_digits=10, decimal_places=2)
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2)
+    compra = models.ForeignKey(Registro, on_delete=models.CASCADE, null=True)
+    producto = models.ForeignKey('Producto', on_delete=models.SET_NULL, null=True)
+    nombre_producto = models.CharField(max_length=255, null=False)
+    cantidad = models.PositiveIntegerField(null=False)
+    precio_producto = models.IntegerField(default=0,null=False)
+    subtotal = models.IntegerField(default=0,null=False)
 
     def save(self, *args, **kwargs):
+        if not self.pk:  # Si es una nueva instancia
+            self.nombre_producto = self.producto.nombre
+            self.precio_producto = self.producto.precio
         self.subtotal = self.cantidad * self.precio_producto
         super().save(*args, **kwargs)
