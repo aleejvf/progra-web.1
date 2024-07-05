@@ -21,12 +21,21 @@ class Categoria(models.Model):
 
 # MODELO PRODUCTO
 class Producto(models.Model):
+    GRANDE = 'Grande'
+    MEDIANO = 'Mediano'
+    PEQUEÑO = 'Pequeño'
+    TAMAÑO_CHOICES = [
+        (GRANDE, 'Grande'),
+        (MEDIANO, 'Mediano'),
+        (PEQUEÑO, 'Pequeño'),
+    ]
     nombre=models.CharField(max_length=50, null=False)
     descripcion=models.CharField(max_length=100, null=False)
     foto=models.ImageField(upload_to='personas',null=True)
     precio=models.IntegerField(default=0, validators=[MinValueValidator(0)])
     cantidad_disponible = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE, related_name="productos")
+    tamaño = models.CharField(max_length=7, choices=TAMAÑO_CHOICES)
 
     def __str__ (self):
         return f"{self.id} -  {self.nombre} {self.descripcion}"
